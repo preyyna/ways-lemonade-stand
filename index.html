@@ -1,59 +1,54 @@
 <!DOCTYPE html>
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 
-  <!-- Main Card -->
-  <div class="bg-white/80 backdrop-blur-md rounded-[40px] shadow-2xl max-w-xl w-full p-10 text-center border-4 border-white relative z-10">
+<body>
 
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <img
-        src="waysmarketing_logo.jfif"
-        alt="WAYS Logo"
-        class="w-56 drop-shadow-xl"
-      />
-    </div>
+  <div class="lemon lemon1">🍋</div>
+  <div class="lemon lemon2">🍋</div>
+  <div class="lemon lemon3">🍋</div>
+  <div class="lemon lemon4">🍋</div>
 
-    <!-- Lemonade Emoji -->
-    <div class="text-7xl mb-4 animate-bounce">🍹</div>
+  <div class="container">
 
-    <!-- Heading -->
-    <h1 class="text-4xl font-extrabold text-yellow-500 mb-3 leading-tight">
-      Hope You Enjoyed<br />Your Lemonade 🍋
+    <img src="waysmarketing_logo.jfif" alt="WAYS Logo" class="logo">
+
+    <h1>
+      Hope You Enjoyed<br>
+      Your Lemonade 🍋
     </h1>
 
-    <p class="text-gray-700 text-lg mb-8 font-medium">
-      Rate your lemonade experience below!
-    </p>
+    <p>Rate your lemonade experience!</p>
 
-    <!-- Rating Buttons -->
-    <div id="rating" class="flex justify-center gap-3 mb-8 flex-wrap">
-      <button class="text-5xl hover:scale-125 transition">🍹</button>
-      <button class="text-5xl hover:scale-125 transition">🍹</button>
-      <button class="text-5xl hover:scale-125 transition">🍹</button>
-      <button class="text-5xl hover:scale-125 transition">🍹</button>
-      <button class="text-5xl hover:scale-125 transition">🍹</button>
+    <div class="rating">
+      <span class="drink">🍹</span>
+      <span class="drink">🍹</span>
+      <span class="drink">🍹</span>
+      <span class="drink">🍹</span>
+      <span class="drink">🍹</span>
     </div>
 
-    <!-- Thank You Message -->
-    <div id="thankyou" class="hidden bg-yellow-100 rounded-3xl p-5 border-2 border-dashed border-yellow-400">
-      <p class="text-yellow-700 font-bold text-lg">
-        Thank you for rating us 💛
-      </p>
+    <div class="thankyou" id="thankyouMessage">
+      Thank you for rating us 💚
     </div>
 
   </div>
 
-  <!-- JAVASCRIPT GOES HERE -->
   <script>
-    const buttons = document.querySelectorAll('#rating button');
-    const thankyou = document.getElementById('thankyou');
+    const drinks = document.querySelectorAll('.drink');
+    const thankyou = document.getElementById('thankyouMessage');
 
-    buttons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        thankyou.classList.remove('hidden');
+    drinks.forEach((drink, index) => {
+      drink.addEventListener('click', () => {
+        thankyou.style.display = 'block';
 
-        buttons.forEach((btn, i) => {
-          if (i <= index) {
-            btn.innerHTML = '🍋';
+        drinks.forEach((d, i) => {
+          if(i <= index) {
+            d.innerHTML = '🍋';
           }
         });
       });
